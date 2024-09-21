@@ -22,7 +22,7 @@ for(i in 1:100){
   df_iinpirf <- iinpirf(df)
   df_binpi <- binpi(df)
   df_missF <- missForest(df)$ximp
-  MICE <- mice(df, method = "rf")
+  MICE <- mice(df)
   df_mice <- complete(MICE, action = 5)
   na <- which(is.na(df), arr.ind = TRUE)
   na_x1 <- subset(na, na[,2] == 1)
